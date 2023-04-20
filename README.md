@@ -99,9 +99,11 @@ Para o menú anterior xa sale a conta aplicar o patrón composite. Pensa además
 
 Acéptanse todo tipo de melloras e ampliacións. 
 
-### ENTREGASE EN GITLAB(contidos do proxecto de entrega)
-
-- Código java (O proxecto)
+### ENTRÉGASE
+- na tarefa de moodle a url do teu proxecto gitla. 
+- proxecto gitlab.Non olvides incluir como membro a lozano@iessanclemente.net
+### O proxecto gitlab debe ser proxecto VSC que debe conter
+- Código java 
 - Video de execución
 O video debera ser breve 5-10 min e nel debe apreciarse:
     - Estructura do menú, navegando rápido por todas as opcións posibles sin pararse na execución das follas.
