@@ -1,92 +1,114 @@
 # Amongsancle Enunciado
 
+![image.png](./image.png)
 
 
-## Getting started
 
-To make it easy for you to get started with GitLab, here's a list of recommended next steps.
 
-Already a pro? Just edit this README.md and make it your own. Want to make it easy? [Use the template at the bottom](#editing-this-readme)!
 
-## Add your files
+## Descrición xeral
 
-- [ ] [Create](https://docs.gitlab.com/ee/user/project/repository/web_editor.html#create-a-file) or [upload](https://docs.gitlab.com/ee/user/project/repository/web_editor.html#upload-a-file) files
-- [ ] [Add files using the command line](https://docs.gitlab.com/ee/gitlab-basics/add-file.html#add-a-file-using-the-command-line) or push an existing Git repository with the following command:
+Se trata de implementar unha simulación do coñecido xogo Among Us.   Esta práctica está baseada a sua vez na práctica que fixo  no 2022 o  profesor de prácticas Alvaro Ordoñez. 
 
-```
-cd existing_repo
-git remote add origin https://gitlab.iessanclemente.net/lozano/amongsancle_enunciado.git
-git branch -M main
-git push -uf origin main
-```
+En _Among SanClemente_, un grupo de estudantes quedou encerrado nas instalacións do IES San Clemente e debe realizar todas as tarefas encomendadas para poder continuar coa actividade normal do centro. Cambiar un cable _Ethernet_ na sala de profesorado, ir coller xices á conserxería para repoñelos nas aulas ou reparar o proxector na aula da bodega son só algunhas das duras tarefas que o estudantado terá que solucionar. Pero isto non é todo ao que se terán que enfrontar! Entre eles/as hai algúns/has impostores/as que farán todo o posible para evitar que o grupo de estudantes consiga realizar todas as tarefas e recuperar o transcurso habitual do IES San Clemente.
 
-## Integrate with your tools
+O programa que imos desenvolver simulará o comportamento de todos os/as xogadores/as (estudantes e impostores/as) e o obxectivo da persoa usuaria será identificar aos/ás impostores/as antes de que estes eliminen a todos os estudantes. O xogo se estrutura en roldas. En cada rolda, os/as xogadores/as (estudantes e impostores/as) realizarán virtualmente as tarefas encomendadas. As tarefas estarán almacenadas nunha cola e en cada rolda terán que realizar a que estea en primeira posición (cola é FIFO). O programa dirá quen fixo que tarefa e en que localización. Tamén avisará de se se produciu algunha eliminación por parte dun/ha impostor/a. Todo isto será automático pero serás ti, usuaria, a persoa que ten que acusar en cada rolda (ou pasar para que continúe o xogo) a un/ha posible impostor/a cos datos que che dá o programa. 
 
-- [ ] [Set up project integrations](https://gitlab.iessanclemente.net/lozano/amongsancle_enunciado/-/settings/integrations)
+O xogo finalizará cando:
 
-## Collaborate with your team
 
-- [ ] [Invite team members and collaborators](https://docs.gitlab.com/ee/user/project/members/)
-- [ ] [Create a new merge request](https://docs.gitlab.com/ee/user/project/merge_requests/creating_merge_requests.html)
-- [ ] [Automatically close issues from merge requests](https://docs.gitlab.com/ee/user/project/issues/managing_issues.html#closing-issues-automatically)
-- [ ] [Enable merge request approvals](https://docs.gitlab.com/ee/user/project/merge_requests/approvals/)
-- [ ] [Automatically merge when pipeline succeeds](https://docs.gitlab.com/ee/user/project/merge_requests/merge_when_pipeline_succeeds.html)
 
-## Test and Deploy
+- os/as xogadores/as estudantes terminen todas as súas tarefas (vitoria).
+- se expulsen a todos os/as impostores/as (vitoria).
+- o número de impostores/as sexa maior ou igual que o número de estudantes (derrota).
 
-Use the built-in continuous integration in GitLab.
 
-- [ ] [Get started with GitLab CI/CD](https://docs.gitlab.com/ee/ci/quick_start/index.html)
-- [ ] [Analyze your code for known vulnerabilities with Static Application Security Testing(SAST)](https://docs.gitlab.com/ee/user/application_security/sast/)
-- [ ] [Deploy to Kubernetes, Amazon EC2, or Amazon ECS using Auto Deploy](https://docs.gitlab.com/ee/topics/autodevops/requirements.html)
-- [ ] [Use pull-based deployments for improved Kubernetes management](https://docs.gitlab.com/ee/user/clusters/agent/)
-- [ ] [Set up protected environments](https://docs.gitlab.com/ee/ci/environments/protected_environments.html)
+# Máis descricións e restriccións que debe cumplir a tua App
 
-***
+- O proxecto debe estar en VSC por si eu quixera/precisara clonalo cómodamente coa opción específica do gitlab.
+- Uso de paquetes. Nos despreocupamos nesta práctica da estructura de paquetes. Poden estar tódalas  clases no paquete por defecto. 
+- Evita static sen sentido. Unha cousa e “utilizar ben” static por exemplo no patrón Singleton e outra facer un main que chama a un porrón de métodos static. De prácticas anteriores xa ten que estar asimilada esta cuestión.
+- Procura que clases elementales como Xogador, Tarefa etc. sexan independentes da E/S pero para o resto do código  se consinte nesta práctica mezclar lóxica con E/S co obxectivo de facer o código máis curto e centrar o noso esforzo na xestión das listas.
+- Haberá dous tipos de xogadores/as: estudantes e impostores/as. 
+-   Atributos comúns a estudantes e impostares: un alias e unha cola de tarefas.
+-   Atributos só das/os impostores/as: lista onde se almacenen os/as estudantes que eliminaron.
 
-# Editing this README
+- Hay que comprobar que non se introducen alias repetidos a hora de crear novos/as xogadores/as e ** **que os alias teñen o  formato @xxx donde cada x pode ser calquera letra ou díxito. observa que tódolos alias comenzan con @ 
 
-When you're ready to make this README your own, just edit this file and use the handy template below (or feel free to structure it however you want - this is just a starting point!). Thank you to [makeareadme.com](https://www.makeareadme.com/) for this template.
+- Cada vez que se crea un xogador, asígnaselle a devandito  xogador/a unha lista de  tarefas ** **(5 ou mais) ** **escollidas aleatoriamente da lista xeral de tarefas 
 
-## Suggestions for a good README
-Every project is different, so consider which of these sections apply to yours. The sections used in the template are suggestions for most open source projects. Also keep in mind that while a README can be too long and detailed, too long is better than too short. If you think your README is too long, consider utilizing another form of documentation rather than cutting out information.
+- Polo tanto, tes que definir unha lista xeral de tarefas. Unha tarefa ten 2 atributos: nome(descripción) e habitación. O nome sería por exemplo “Arranxar o proxector” e a habitación “Aula da bodega”. Procurade que haxa máis dunha tarefa na mesma habitación.
 
-## Name
-Choose a self-explaining name for your project.
+- Antes de iniciar unha partida(opción xogar no menú),  o programa de xeito aleatorio  configura que estudantes pasan a ser  impostores durante o transcurso da partida. O número de impostores  será >=1 e o número de xogadores totales(estudantes + impostores) loxicamente ten que ser maior co número de impostores
 
-## Description
-Let people know what your project can do specifically. Provide context and add a link to any reference visitors might be unfamiliar with. A list of Features or a Background subsection can also be added here. If there are alternatives to your project, this is a good place to list differentiating factors.
+- Os listados serán sempre ordenados, cando o vexas conviente podes ordenar por varios campos, por exemplo, o listado de tarefas pode de ser ordenadas por habitación e para a mesma habitación por descrición. 
+- Como se indicou anteriormente a partida se organiza en roldas. En cada rolda cada impostor observará os xogadores que están na sua habitación e intentará asesinalos O intento se simula a través dunha decisión  random tipo  cara o cruz
+- Pode  haber varios asasinatos na mesma rolda
 
-## Badges
-On some READMEs, you may see small images that convey metadata, such as whether or not all the tests are passing for the project. You can use Shields to add some to your README. Many services also have instructions for adding a badge.
+- Os impostores non se poden matar entre eles.
+- Sobre o control de tempo de reposta do usuario para indicar a quen quere expulsar.
 
-## Visuals
-Depending on what you are making, it can be a good idea to include screenshots or even a video (you'll frequently see GIFs rather than actual videos). Tools like ttygif can help, but check out Asciinema for a more sophisticated method.
+Durante o transcurso da partida  o usuario debe indicar  quen  é o impostor expulsando ao xogador do que sospeita. O programa debe controlar o tempo que tarda en respostar o usuario e cotexalo cun tempo límite de resposta. O tempo limite de resposta se configura coa opción correspondente de menú. Si o usuario supera o tempo límite de resposta non se lle ten enconta o que escriba e non pode expulsar a ningúen na rolda actual.  Si un usuario responde fora do tempo límite, incluso se pode sancionar ao usuario reducíndolle o tempo de resposta nas próximas roldas para estresalo e evitar que analice a información tranquilamente. 
 
-## Installation
-Within a particular ecosystem, there may be a common way of installing things, such as using Yarn, NuGet, or Homebrew. However, consider the possibility that whoever is reading your README is a novice and would like more guidance. Listing specific steps helps remove ambiguity and gets people to using your project as quickly as possible. If it only runs in a specific context like a particular programming language version or operating system or has dependencies that have to be installed manually, also add a Requirements subsection.
+- unha vez terminado o xogo, poderase volver a xogar sin salir da APP. Habrá que restaurar os xogadores ao estado inicial de forma que todos sexan estudiantes vivos e sin expulsar pero poden manter as tarefas asignadas. Tamén para o novo xogo e posible reconfigurar os xogadores, tarefas e tempo de resposta via menú. 
 
-## Usage
-Use examples liberally, and show the expected output if you can. It's helpful to have inline the smallest example of usage that you can demonstrate, while providing links to more sophisticated examples if they are too long to reasonably include in the README.
+- Tras  rematar a partida non temos que saír necesariamente do programa. O programa permitirá xogar unha nova partida cos mesmos usuarios. e coas mesmas tarefas asignadas que na partida anterior ou por suposto configurar as tarefas e xogadores a través do menú antes de comenzar a nova partida.
 
-## Support
-Tell people where they can go to for help. It can be any combination of an issue tracker, a chat room, an email address, etc.
+**PATRÓNS**
+- Só pode  haber un System.in por aplicación. Utiliza o  patrón Singleton para xestionar que haxa unha única instancia do obxeto scanner asociado a System.in. Ao ser unha App pequena e feita por un único programador sería suficente con a referencia ao teclado fora unha simple variable compartida por todas las clases pero por motivos didácticos nos forzamos a resolver esta cuestión con Singleton.
 
-## Roadmap
-If you have ideas for releases in the future, it is a good idea to list them in the README.
+- O menu utiliza o patrón composite e  se estructura da seguinte maneira.
 
-## Contributing
-State if you are open to contributions and what your requirements are for accepting them.
+**MenuAmongSancle:**
 
-For people who want to make changes to your project, it's helpful to have some documentation on how to get started. Perhaps there is a script that they should run or some environment variables that they need to set. Make these steps explicit. These instructions could also be useful to your future self.
+    0. Configuracion
 
-You can also document commands to lint the code or run tests. These steps help to ensure high code quality and reduce the likelihood that the changes inadvertently break something. Having instructions for running tests is especially helpful if it requires external setup, such as starting a Selenium server for testing in a browser.
+     	0. Tarefas
 
-## Authors and acknowledgment
-Show your appreciation to those who have contributed to the project.
+         		0. Engadir tarefa
 
-## License
-For open source projects, say how it is licensed.
+         		1. Borrar tarefa
 
-## Project status
-If you have run out of energy or time for your project, put a note at the top of the README saying that development has slowed down or stopped completely. Someone may choose to fork your project or volunteer to step in as a maintainer or owner, allowing your project to keep going. You can also make an explicit request for maintainers.
+         		2. Ver tarefas.
+
+         		3. Salir
+
+         	1. Xogadores.
+
+         		0. Engadir xogador
+
+         		1. Borrar xogador
+
+         		2. Ver xogadores
+
+         		3. Salir.
+
+         	2. Configurar tempo máximo de resposta
+
+         	3. Salir.
+
+ 	1. Xogar
+
+ 	2. Salir
+
+
+
+Para o menú anterior xa sale a conta aplicar o patrón composite. Pensa además que ata para o noso sinxelo suposto o menú anterior pode requerir ampliacións e reestructuración rápidas o cal confirmaría todavía máis a necesidade do patrón.              	
+
+### Melloras e ampliacións  
+
+Acéptanse todo tipo de melloras e ampliacións. 
+
+### ENTREGASE EN GITLAB(contidos do proxecto de entrega)
+
+- Código java (O proxecto)
+- Video de execución
+O video debera ser breve 5-10 min e nel debe apreciarse:
+    - Estructura do menú, navegando rápido por todas as opcións posibles sin pararse na execución das follas.
+    - 2 partidas consecutivas(sin sair de APP) rápidas para non facer extenso o video.
+É imposible unha descripción detallada da tua App nun video de 5-10min. Centráte simplemente nos dous puntos indicados.  Non markdown que se pide máis abaixo poderás si o desexas incorporar calquera explicación ou observación. 
+
+- Documento markdown con:
+    - Impresións  ao escribir a App. ¿tiveches nalgún momento a sensación  que algunha parte do código a estabas escribindo de forma non apropiada por falta de non aplicar un patrón non visto ou por calquera outra cuestión?.
+    - Unha lista breve das meioras achegadas por ti,  e dicir, de funcións e restriccións que non se piden no enunciado. 
+    - Outras observacións.
