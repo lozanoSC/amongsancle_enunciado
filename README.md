@@ -112,7 +112,8 @@ O video debera ser breve 5-10 min e nel debe apreciarse:
 
 - Documento markdown con:
     - Impresións  ao escribir a App. ¿tiveches nalgún momento a sensación  que algunha parte do código a estabas escribindo de forma non apropiada por falta de non aplicar un patrón non visto ou por calquera outra cuestión?.
-	- Indica si precisañes empregar iteradores e porqué.
-	- Indica si precisañes sobreescribir hashcode/equals e porqué.
+	- Indica si precisañes empregar iteradores donde e porqué.
+	- Indica si precisañes sobreescribir hashcode/equals donde e porqué.
+	- Indica donde usaches comparable/comparator e porqué.
     - Unha lista breve das meioras achegadas por ti,  e dicir, de funcións e restriccións que non se piden no enunciado. 
     - Outras observacións.
