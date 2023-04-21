@@ -96,7 +96,7 @@ Durante o transcurso da partida  o usuario debe indicar  quen  é o impostor exp
 Para o menú anterior xa sale a conta aplicar o patrón composite. Pensa además que ata para o noso sinxelo suposto o menú anterior pode requerir ampliacións e reestructuración rápidas o cal confirmaría todavía máis a necesidade do patrón.              	
 ### un pequeño video
 
-<video src="among.mp4" controls width="640" height="360">
+<video src="./among.mp4" controls width="640" height="360">
   Tu navegador no soporta la etiqueta de video.
 </video>
 
