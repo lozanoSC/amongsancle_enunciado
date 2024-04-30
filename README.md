@@ -25,7 +25,6 @@ O xogo finalizará cando:
 
 # Máis descricións e restriccións que debe cumplir a tua App
 
-- O proxecto debe estar en VSC por si eu quixera/precisara clonalo cómodamente coa opción específica do gitlab.
 - Uso de paquetes. Nos despreocupamos nesta práctica da estructura de paquetes. Poden estar tódalas  clases no paquete por defecto. 
 - Evita static sen sentido. Unha cousa e “utilizar ben” static por exemplo no patrón Singleton e outra facer un main que chama a un porrón de métodos static. De prácticas anteriores xa ten que estar asimilada esta cuestión.
 - Procura que clases elementales como Xogador, Tarefa etc. sexan independentes da E/S pero para o resto do código  se consinte nesta práctica mezclar lóxica con E/S co obxectivo de facer o código máis curto e centrar o noso esforzo na xestión das listas.
@@ -94,7 +93,7 @@ Durante o transcurso da partida  o usuario debe indicar  quen  é o impostor exp
 
 
 Para o menú anterior xa sale a conta aplicar o patrón composite. Pensa además que ata para o noso sinxelo suposto o menú anterior pode requerir ampliacións e reestructuración rápidas o cal confirmaría todavía máis a necesidade do patrón.              	
-### un pequeño video
+### un pequeno video
 ![among.mp4](video/among.mp4)
 
 ### Melloras e ampliacións  
@@ -102,9 +101,9 @@ Para o menú anterior xa sale a conta aplicar o patrón composite. Pensa además
 Acéptanse todo tipo de melloras e ampliacións. 
 
 ### ENTRÉGASE
-- na tarefa de moodle a url do teu proxecto gitla. 
-- proxecto gitlab.Non olvides incluir como membro a lozano@iessanclemente.net
-### O proxecto gitlab debe ser proxecto VSC que debe conter
+- na tarefa de moodle a url do teu proxecto github. 
+
+### O proxecto debe conter
 - Código java 
 - Video de execución
 O video debera ser breve 5-10 min e nel debe apreciarse:
